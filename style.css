@@ -1,0 +1,285 @@
+.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    overflow: hidden;
+    filter: brightness(0.1);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(12px); /* Echte frosted glass look */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    color: white;
+    font-family: 'Silkscreen', monospace;
+    user-select: none;
+    z-index: 1000;
+}
+
+.topbar p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Past nu strak en scherp binnen de 42px hoogte */
+    line-height: 1;
+}
+
+.topbar p {
+    margin: 0;
+    font-size: 40px;
+    padding: 10px 10px;
+}
+.dot.red { background-color: #ff5f57; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+
+.dot::after {
+    opacity: 0;
+    font-size: 13px;
+    font-family: Arial, sans-serif; /* Simpel schreefloos font voor strakke tekens */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1;
+    transition: opacity 0.15s ease;
+}
+
+
+.dot.red::after {
+    content: "✕";
+    font-size: 11px;
+}
+
+.dot.yellow::after {
+    content: "−";
+    font-size: 14px;
+}
+
+.dot.green::after {
+    content: "⤢";
+    font-size: 12px;
+}
+
+
+.dot:hover::after {
+    opacity: 1;
+}
+
+.dot:hover {
+    transform: scale(1.1);
+}
+
+.panel {
+
+    background: rgba(20, 20, 20, 0.3);
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 100px;
+left: 100px;
+    backdrop-filter: blur(8px);
+
+    z-index: 15;
+}
+.paneltop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px 8px 8px 8px;
+    padding: 8px;
+    cursor: grab;
+    user-select: none;
+    margin-bottom: 16px;
+}
+.window-title {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+    font-family: 'Silkscreen', monospace;
+}
+.paneltop:active {
+    cursor: grabbing;
+}
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+.panel h2 {
+    margin-top: 0;
+    font-size: 30px;
+    color: white;
+}
+
+.panel p {
+    font-size: 16px;
+    color: white;
+}
+
+h2 {
+    font-family: 'Silkscreen', monospace;
+}
+
+p {
+    font-family: 'Silkscreen', monospace;
+}
+.boot-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 14px;
+    transition: transform 0.15s ease, background 0.15s ease;
+        font-family: 'Silkscreen', monospace;
+}
+.boot-btn:hover {
+    transform: translateY(-6px) scale(1.1);
+}
+.boot-btn:active {
+    transform: scale(0.95);
+}
+.boot-btn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    padding: 0 16px;
+    color: white;
+    font-family: 'Silkscreen', monospace;
+    font-size: 13px;
+    user-select: none;
+    z-index: 10;
+    
+}
+
+.dock-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+    user-select: none;
+}
+
+
+.dock-icon:hover {
+    transform: translateY(-6px) scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.dock-icon.active {
+    background: rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid white;
+}
+
+.fullscreen {
+
+
+    width: 80% !important;
+    max-width: 100vw !important;
+    height: 80% !important;
+    border-radius: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.pixel {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 50%;
+    display: block;
+    object-fit: cover;
+}
+
+.notepad-input {
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-family: 'Silkscreen', monospace;
+    font-size: 14px;
+    padding: 8px;
+    resize: none;
+    outline: none;
+}
+
