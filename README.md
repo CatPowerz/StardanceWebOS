@@ -1,24 +1,19 @@
-# CatOS (WebOS 1)
+# CatOS 1 (WebOS)
 
-A lightweight retro-styled WebOS built from scratch in vanilla JS, HTML, and CSS. Made for the Stardance challenge as a custom new tab page / browser desktop.
+CatOS is a retro-styled OS written in html/css/js, featuring three different apps and, above all, cute cats :)
+The project is running at https://catpowerz.github.io/stardancewebos/ and is **fully handmade from scratch by me**.
 
-## What's in WebOS 1?
+# Features
 
-- **Custom Window Engine:** Draggable panels with focus/z-index layering, minimize to dock, full-screen toggle, and randomized spawn locations when opening fresh windows.
-- **Top Bar & Dock:** Live clock widget and a quick-launch dock for background/active apps.
-- **Apps:**
-  - `Welcome`: Quick intro panel.
-  - `Pixel`: Dedicated photo viewer for my cat Pixel.
-  - `Notepad`: Scratchpad for quick notes (session-only for now; persistent storage coming in WebOS 2).
+- Notepad: write notes, these do not get saved yet, so when you close the tab, you **will lose** your notes. However, you can minimize the window to prevent data loss.
+- Welcome: a simple window to greet you.
+- Pixel: an image of my cute cat named **Pixel**!
 
-## Tech Stack
+You can drag windows around, and even fullscreen them!
 
-No frameworks, libraries, or builders. Just pure:
-- HTML5
-- CSS3 (custom dark/frosted glass aesthetic + Silkscreen font)
-- Vanilla JavaScript (custom drag logic & DOM window management)
+# AI was barely used!
 
-## Live Demo
+Only Gemini was occasionally used for debugging specific formulas, but the README, the website itself, etcetera was handmade.
 
-Hosted on GitHub Pages:  
-https://catpowerz.github.io/StardanceWebOS/
+**No framework! Just pure static html/css/js. It’s live!**
+https://catpowerz.github.io/stardancewebos/
