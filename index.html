@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <img src="bg.jpg" class="bg" alt="Background Image">
@@ -19,11 +20,12 @@
             <span class="dot yellow btn-min"></span>
             <span class="dot green btn-max"></span>
         </div>
-        <span class="window-title">welcome</span>
+        <span class="window-title">Welcome</span>
     </div>
     <h2>Welcome to CatOS</h2>
     <p>Cute Cats on your cat-themed operating system</p>
     <button class="boot-btn">Get Started</button>
+    <p>Tip: you can fullscreen windows and minimize them</p>
 </div>
 
 
@@ -39,6 +41,47 @@
     <h2>My cute cat Pixel</h2>
     <img src="pixel.jpeg" alt="Pixel" class="pixel">
 </div>
+<div id="settings" class="panel hidden">
+    <div class="paneltop" id="settingsheader">
+        <div class="window-controls">
+            <span class="dot red btn-close"></span>
+            <span class="dot yellow btn-min"></span>
+            <span class="dot green btn-max"></span>
+        </div>
+        <span class="window-title">Settings</span>
+        
+    </div>
+    <h2>Settings</h2>
+    <p>Configure your CatOS</p>
+
+    <div class="settings-content">
+    <div class="setting-group">
+        <label for="bg-select">Wallpaper</label>
+        <select id="bg-select" class="settings-input">
+            <option value="bg.jpg">Default</option>
+            <option value="pixelbg.jpeg">Pixel</option>
+            <option value="whitecat.jpg">White Cat</option>
+            <option value="closeup.png">Close-Up Cat</option>
+        </select>
+    </div>
+
+    <div class="setting-group">
+        <label for="font-select">System Font</label>
+        <select id="font-select" class="settings-input">
+            <option value="'Silkscreen', monospace">Silkscreen</option>
+            <option value="'VT323', monospace">VT323</option>
+            <option value="'Press Start 2P', monospace">Press Start 2P</option>
+            <option value="'Courier Prime', monospace">Courier Prime</option>
+            <option value="system-ui, sans-serif">Modern Sans</option>
+        </select>
+    </div>
+
+    <div class="setting-group">
+        <label for="bg-brightness-slider">Background Brightness</label>
+        <input type="range" id="bg-brightness-slider" class="settings-input" min="0" max="1" value="0.3" step="0.0001">
+    </div>
+</div>
+</div>
 <div id="notepad" class="panel hidden">
     <div class="paneltop" id="notepadheader">
         <div class="window-controls">
@@ -49,8 +92,48 @@
         <span class="window-title">Notepad</span>
     </div>
     <h2>Notepad</h2>
-    <p>Does not save. That's something for WebOS 2 :)</p>
+    <p>Save and load your notes</p>
     <textarea class="notepad-input" placeholder="Type here..."></textarea>
+   
+    <div class="notepad-actions">
+        <p id="notepad-status" class="notepad-status">No notes saved</p>
+        <button id="notepad-save" class="notepad-btn">Save</button>
+        <button id="notepad-load" class="notepad-btn">Load</button>
+        <button id="notepad-clear" class="notepad-btn">Clear</button>
+    </div>
+</div>
+<div id="audioplayer" class="panel hidden">
+    <div class="paneltop" id="audioplayerheader">
+        <div class="window-controls">
+            <span class="dot red btn-close"></span>
+            <span class="dot yellow btn-min"></span>
+            <span class="dot green btn-max"></span>
+        </div>
+        <span class="window-title">CatAudio</span>
+    </div>
+    <h2>CatAudio</h2>
+    <p>Play some music composed by me!</p>
+    
+    <div class="player-body">
+    <div class="track-info">
+        <span id="current-track-title">Select a track</span>
+        <span id="track-time">0:00 / 0:00</span>
+    </div>
+
+    <audio id="cat-audio-element" class = "currentplaying" preload="metadata"></audio>
+
+    <div class="player-controls">
+        <button id="btn-prev" class="player-btn">⏮</button>
+        <button id="btn-play" class="player-btn">▶</button>
+        <button id="btn-next" class="player-btn">⏭</button>
+        <input type="range" id="seek-bar" value="0" min="0" step="1">
+    </div>
+
+    <ul id="track-list" class="track-list">
+       
+    </ul>
+</div>
+   
     
 </div>
     <div class="topbar">
@@ -62,7 +145,8 @@
     <div id="dock-welcome" data-window="welcome" class="dock-icon" title="Welcome">👋</div>
     <div id="dock-facts" data-window="pixel" class="dock-icon" title="Pixel">🐱</div>
     <div id="dock-notepad" data-window="notepad" class="dock-icon" title="Notepad">📝</div>
-    
+    <div id="dock-music" data-window="audioplayer" class="dock-icon" title="CatAudio">🎵</div>
+    <div id="dock-settings" data-window="settings" class="dock-icon" title="Settings">⚙️</div>
 </nav>
 </body>
 <script src="script.js"></script>
